@@ -7,17 +7,17 @@
   let newsRequest = 0;
 
   function parseFrontMatter(markdown) {
-    const match = markdown.match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---(?:\\r?\\n|$)/);
+    const match = markdown.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
     if (!match) return null;
     const yaml = match[1];
     const readScalar = (key) => {
       const found = yaml.match(new RegExp("^" + key + ":\\s*(.*)$", "m"));
       return found ? found[1].trim().replace(/^["']|["']$/g, "") : "";
     };
-    const summaryBlock = yaml.match(/^summary:\\s*[|>]?-?\\s*\\r?\\n((?:[ \\t]+.*(?:\\r?\\n|$))*)/m);
+    const summaryBlock = yaml.match(/^summary:\s*[|>]?-?\s*\r?\n((?:[ \t]+.*(?:\r?\n|$))*)/m);
     let summary = readScalar("summary");
     if (summaryBlock) {
-      summary = summaryBlock[1].split(/\\r?\\n/).map(line => line.replace(/^\\s{1,}/, "")).join(" ").trim();
+      summary = summaryBlock[1].split(/\r?\n/).map(line => line.replace(/^\s{1,}/, "")).join(" ").trim();
     }
     return {
       title: readScalar("title"),
@@ -31,7 +31,7 @@
     const card = document.createElement("article");
     card.className = "post-card";
 
-    if (post.image && (/^\\//.test(post.image) || /^https:\\/\\//i.test(post.image))) {
+    if (post.image && (/^\//.test(post.image) || /^https:\/\//i.test(post.image))) {
       const image = document.createElement("img");
       image.src = post.image;
       image.alt = post.title;
