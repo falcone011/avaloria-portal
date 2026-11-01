@@ -2,7 +2,7 @@
 # e configure um fluxo OAuth seguro para autenticação GitHub.
 backend:
   name: github
-  repo: SEU_USUARIO/avaloria-portal
+  repo: falcone011/avaloria-portal
   branch: main
   base_url: https://SEU-OAUTH-WORKER.workers.dev
   auth_endpoint: auth
