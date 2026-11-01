@@ -4,7 +4,7 @@ backend:
   name: github
   repo: falcone011/avaloria-portal
   branch: main
-  base_url: https://SEU-OAUTH-WORKER.workers.dev
+  base_url: https://avaloria-oauth.kelvizinho2001.workers.dev
   auth_endpoint: auth
 
 media_folder: "assets/uploads"
