@@ -1,0 +1,53 @@
+AVALÓRIA — COMO PUBLICAR O SITE PELO NAVEGADOR (SEM VS CODE)
+
+Você NÃO precisa instalar VS Code, Node.js ou qualquer programa de programação para enviar esta primeira versão ao GitHub.
+
+PARTE 1 — BAIXAR E EXTRAIR
+1. Baixe o arquivo avaloria-portal-starter.zip enviado nesta conversa.
+2. No Windows, abra a pasta Downloads.
+3. Clique com o botão direito no ZIP e escolha "Extrair tudo...".
+4. Abra a pasta extraída "avaloria-portal".
+5. Você verá index.html, README.md, assets, admin e content.
+   IMPORTANTE: envie o CONTEÚDO dessa pasta ao GitHub, não o arquivo ZIP.
+
+PARTE 2 — CRIAR O REPOSITÓRIO
+1. Entre em https://github.com e faça login ou crie uma conta.
+2. Clique no botão "+" no canto superior direito e escolha "New repository".
+3. Repository name: avaloria-portal
+4. Escolha Public (ou Private, se preferir manter o código privado).
+5. Marque "Add a README file" DESMARCADO, pois o projeto já tem README.
+6. Clique em "Create repository".
+
+PARTE 3 — ENVIAR OS ARQUIVOS
+1. No repositório recém-criado, clique em "Add file" > "Upload files".
+2. No Explorador de Arquivos do Windows, abra a pasta extraída avaloria-portal.
+3. Selecione TUDO que está dentro dela (index.html, README.md, assets, admin, content).
+4. Arraste os itens selecionados para a área de upload do GitHub.
+   Se o navegador não aceitar pastas arrastadas, abra cada pasta e envie seus arquivos mantendo a mesma estrutura de pastas.
+5. Aguarde o upload terminar.
+6. Em "Commit changes", escreva: "Adicionar portal inicial de Avalória".
+7. Clique em "Commit changes".
+
+PARTE 4 — CONFERIR
+1. Volte à página principal do repositório.
+2. Confirme que index.html aparece na raiz, junto das pastas assets, admin e content.
+3. Clique em index.html para confirmar que o arquivo foi enviado.
+4. Não publique ainda o painel /admin: ele exige configuração OAuth antes de permitir login seguro.
+
+O QUE JÁ ESTÁ PRONTO
+- Página inicial responsiva em português e inglês.
+- Navegação por seções do portal.
+- Identidade visual medieval e arte conceitual.
+- Estrutura inicial para notícias, devlog e galeria.
+- Estrutura inicial do painel Decap CMS.
+
+O QUE AINDA PRECISA SER CONFIGURADO DEPOIS
+- Cloudflare Pages (hospedagem).
+- OAuth seguro para o painel administrativo.
+- Permissões e contas da equipe.
+- Links reais das plataformas de apoio mensal e pontual.
+- Conteúdo oficial, imagens reais e recompensas definitivas.
+- Integração das publicações do CMS com as listas do site público.
+
+OBSERVAÇÃO
+Esta entrega é um site estático: não precisa de banco de dados nem de servidor próprio para a página pública. A imagem principal é conceitual, não uma captura real do jogo. O botão de apoio ainda é um link provisório e deve ser substituído antes de divulgar o site.

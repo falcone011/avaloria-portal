@@ -1,0 +1,82 @@
+# Antes de publicar: substitua os valores de exemplo pelo repositório real
+# e configure um fluxo OAuth seguro para autenticação GitHub.
+backend:
+  name: github
+  repo: SEU_USUARIO/avaloria-portal
+  branch: main
+  base_url: https://SEU-OAUTH-WORKER.workers.dev
+  auth_endpoint: auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "news_pt"
+    label: "Notícias — Português"
+    folder: "content/news/pt"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Resumo", name: "summary", widget: "text" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Imagem", name: "image", widget: "image", required: false }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "news_en"
+    label: "News — English"
+    folder: "content/news/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "devlog_pt"
+    label: "Diário — Português"
+    folder: "content/devlog/pt"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Resumo", name: "summary", widget: "text" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "devlog_en"
+    label: "Devlog — English"
+    folder: "content/devlog/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "gallery_pt"
+    label: "Galeria — Português"
+    folder: "content/gallery/pt"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text", required: false }
+      - { label: "Imagem", name: "image", widget: "image", required: false }
+      - { label: "Vídeo (URL)", name: "video_url", widget: "string", required: false }
+
+  - name: "gallery_en"
+    label: "Gallery — English"
+    folder: "content/gallery/en"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Video (URL)", name: "video_url", widget: "string", required: false }

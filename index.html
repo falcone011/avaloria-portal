@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21160f">
+  <meta name="description" content="Conheça Avalória, um simulador medieval de ferraria, gestão econômica e narrativa tática.">
+  <title>Avalória — Um novo reino está sendo forjado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="top-rule"></div>
+  <header class="site-header">
+    <a class="wordmark" href="#inicio" aria-label="Avalória - início">Avalória<span class="wordmark-rule"></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#inicio" data-i18n="nav.home">Início</a>
+      <a href="#jogo" data-i18n="nav.game">O Jogo</a>
+      <a href="#noticias" data-i18n="nav.news">Notícias</a>
+      <a href="#devlog" data-i18n="nav.devlog">Diário</a>
+      <a href="#galeria" data-i18n="nav.gallery">Galeria</a>
+      <a href="#apoie" data-i18n="nav.support">Apoie</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-label" for="language">Idioma</label>
+      <select id="language" aria-label="Selecionar idioma">
+        <option value="pt">PT</option>
+        <option value="en">EN</option>
+      </select>
+      <a class="admin-link" href="admin/" data-i18n="nav.admin">Equipe</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">UM NOVO REINO ESTÁ SENDO FORJADO</p>
+        <h1 data-i18n="hero.title">Bem-vindo a <em>Avalória</em></h1>
+        <div class="ornament"><span></span>✧<span></span></div>
+        <p class="hero-description" data-i18n="hero.description">Um simulador de ferraria medieval, gestão econômica e narrativa tática, onde suas decisões moldam o destino de um reino.</p>
+        <a class="button button-gold" href="#jogo" data-i18n="hero.cta">Conheça o jogo</a>
+        <p class="status-note"><span class="status-dot"></span><span data-i18n="hero.status">Em desenvolvimento · Sem data de lançamento definida</span></p>
+      </div>
+      <div class="hero-art" role="img" aria-label="Ilustração conceitual de uma forja medieval"></div>
+      <div class="hero-bottom"></div>
+    </section>
+
+    <section class="intro-grid section-wrap" id="jogo">
+      <article class="parchment-card">
+        <span class="card-icon">✥</span>
+        <h2 data-i18n="game.title">O mundo de Avalória</h2>
+        <p data-i18n="game.text">Administre sua oficina, aceite encomendas, trabalhe com materiais e enfrente decisões que influenciam o reino.</p>
+        <a href="#sobre" class="text-link" data-i18n="common.learn">Saiba mais →</a>
+      </article>
+      <article class="parchment-card">
+        <span class="card-icon">▤</span>
+        <h2 data-i18n="news.title">Últimas notícias</h2>
+        <p data-i18n="news.text">Acompanhe os anúncios e marcos mais recentes do desenvolvimento.</p>
+        <a href="#noticias" class="text-link" data-i18n="common.read">Ver notícias →</a>
+      </article>
+      <article class="parchment-card">
+        <span class="card-icon">⚒</span>
+        <h2 data-i18n="devlog.title">Diário de desenvolvimento</h2>
+        <p data-i18n="devlog.text">Conheça os bastidores, desafios e conquistas da criação de Avalória.</p>
+        <a href="#devlog" class="text-link" data-i18n="common.follow">Acompanhar diário →</a>
+      </article>
+    </section>
+
+    <section class="content-section section-wrap" id="sobre">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="about.eyebrow">A ARTE DA FORJA</p>
+        <h2 data-i18n="about.title">Mais que uma oficina. Um reino em suas mãos.</h2>
+        <p data-i18n="about.lead">Em Avalória, cada encomenda, material e decisão faz parte de uma jornada de estratégia e descoberta.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature">
+          <span>Ⅰ</span><h3 data-i18n="features.forgeTitle">Forja modular</h3>
+          <p data-i18n="features.forgeText">Combine componentes e materiais para criar equipamentos e descobrir suas propriedades.</p>
+        </article>
+        <article class="feature">
+          <span>Ⅱ</span><h3 data-i18n="features.economyTitle">Gestão econômica</h3>
+          <p data-i18n="features.economyText">Administre recursos, encomendas, custos e oportunidades de mercado.</p>
+        </article>
+        <article class="feature">
+          <span>Ⅲ</span><h3 data-i18n="features.storyTitle">Narrativa tática</h3>
+          <p data-i18n="features.storyText">Acompanhe acontecimentos e tome decisões que podem alterar o destino do reino.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section parchment-band" id="noticias">
+      <div class="section-wrap">
+        <div class="section-heading compact">
+          <p class="eyebrow" data-i18n="news.eyebrow">MENSAGENS DO REINO</p>
+          <h2 data-i18n="news.heading">Notícias e atualizações</h2>
+        </div>
+        <div class="post-grid" id="news-list">
+          <article class="post-card"><span class="post-date">DEVLOG</span><h3 data-i18n="news.placeholderTitle">Novidades em breve</h3><p data-i18n="news.placeholderText">As próximas notícias do projeto serão publicadas aqui.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="devlog">
+      <div class="section-heading compact">
+        <p class="eyebrow" data-i18n="devlog.eyebrow">DOS BASTIDORES DA OFICINA</p>
+        <h2 data-i18n="devlog.heading">Diário de desenvolvimento</h2>
+        <p data-i18n="devlog.intro">Um registro da evolução do projeto, das ideias aos sistemas em construção.</p>
+      </div>
+      <div class="devlog-placeholder">
+        <span class="large-rune">✧</span>
+        <p data-i18n="devlog.placeholder">O primeiro capítulo do diário será publicado em breve.</p>
+      </div>
+    </section>
+
+    <section class="content-section parchment-band" id="galeria">
+      <div class="section-wrap">
+        <div class="section-heading compact">
+          <p class="eyebrow" data-i18n="gallery.eyebrow">VISÕES DE AVALÓRIA</p>
+          <h2 data-i18n="gallery.heading">Galeria</h2>
+          <p data-i18n="gallery.intro">Imagens e vídeos oficiais serão reunidos neste espaço conforme o desenvolvimento avançar.</p>
+        </div>
+        <div class="gallery-placeholder"><span>✥</span><p data-i18n="gallery.placeholder">Em breve: capturas de tela, artes e vídeos do jogo.</p></div>
+      </div>
+    </section>
+
+    <section class="support-banner section-wrap" id="apoie">
+      <div class="support-mark">♡</div>
+      <div class="support-copy">
+        <p class="eyebrow" data-i18n="support.eyebrow">AJUDE A FORJAR ESTE MUNDO</p>
+        <h2 data-i18n="support.title">Apoie a construção de Avalória</h2>
+        <p data-i18n="support.text">Contribua uma vez ou mensalmente e receba recompensas especiais para apoiadores.</p>
+      </div>
+      <a class="button button-gold" href="https://example.com" target="_blank" rel="noopener" data-i18n="support.cta">Quero apoiar</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-wordmark" href="#inicio">Avalória</a>
+    <p data-i18n="footer.tagline">Forjando um futuro juntos.</p>
+    <div class="footer-meta"><span data-i18n="footer.status">Projeto em desenvolvimento</span><span>·</span><span data-i18n="footer.release">Sem data de lançamento definida</span></div>
+    <a class="footer-admin" href="admin/" data-i18n="nav.admin">Acesso da equipe</a>
+  </footer>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
