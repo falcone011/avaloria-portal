@@ -4,9 +4,11 @@
   const nav = document.querySelector(".main-nav");
   const newsList = document.getElementById("news-list");
   const devlogList = document.getElementById("devlog-list");
+  const galleryList = document.getElementById("gallery-list");
   const repository = "falcone011/avaloria-portal";
   let newsRequest = 0;
   let devlogRequest = 0;
+  let galleryRequest = 0;
 
   function parseFrontMatter(markdown) {
     const match = markdown.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
@@ -25,7 +27,9 @@
       title: readScalar("title"),
       summary: readText("summary"),
       date: readScalar("date"),
-      image: readScalar("image")
+      image: readScalar("image"),
+      description: readText("description"),
+      video_url: readScalar("video_url")
     };
   }
 
@@ -140,6 +144,68 @@
     devlogList.appendChild(card);
   }
 
+  async function loadGallery(lang) {
+    if (!galleryList) return;
+    const requestId = ++galleryRequest;
+    const dictionary = window.AVALORIA_TRANSLATIONS[lang] || window.AVALORIA_TRANSLATIONS.pt;
+    try {
+      const posts = await fetchPosts("gallery", lang);
+      if (requestId !== galleryRequest) return;
+      galleryList.replaceChildren();
+      if (!posts.length) {
+        showGalleryPlaceholder(dictionary);
+        return;
+      }
+      posts.forEach(post => {
+        const card = document.createElement("article");
+        card.className = "gallery-card";
+        if (post.image && (/^\\//.test(post.image) || /^https:\\/\\//i.test(post.image))) {
+          const image = document.createElement("img");
+          image.src = post.image;
+          image.alt = post.title || "";
+          image.loading = "lazy";
+          card.appendChild(image);
+        }
+        const details = document.createElement("div");
+        details.className = "gallery-card-content";
+        const heading = document.createElement("h3");
+        heading.textContent = post.title || (lang === "en" ? "Untitled image" : "Imagem sem título");
+        details.appendChild(heading);
+        if (post.description) {
+          const description = document.createElement("p");
+          description.textContent = post.description;
+          details.appendChild(description);
+        }
+        if (post.video_url && /^https:\\/\\//i.test(post.video_url)) {
+          const videoLink = document.createElement("a");
+          videoLink.href = post.video_url;
+          videoLink.target = "_blank";
+          videoLink.rel = "noopener noreferrer";
+          videoLink.textContent = lang === "en" ? "Watch video ↗" : "Assistir vídeo ↗";
+          details.appendChild(videoLink);
+        }
+        card.appendChild(details);
+        galleryList.appendChild(card);
+      });
+    } catch (error) {
+      if (requestId !== galleryRequest) return;
+      showGalleryPlaceholder(dictionary);
+      console.error("Não foi possível carregar a galeria de Avalória:", error);
+    }
+  }
+
+  function showGalleryPlaceholder(dictionary) {
+    galleryList.replaceChildren();
+    const placeholder = document.createElement("div");
+    placeholder.className = "gallery-placeholder";
+    const rune = document.createElement("span");
+    rune.textContent = "✥";
+    const paragraph = document.createElement("p");
+    paragraph.textContent = dictionary["gallery.placeholder"];
+    placeholder.append(rune, paragraph);
+    galleryList.appendChild(placeholder);
+  }
+
   function applyLanguage(lang) {
     const dictionary = window.AVALORIA_TRANSLATIONS[lang] || window.AVALORIA_TRANSLATIONS.pt;
     document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
@@ -151,6 +217,7 @@
     try { localStorage.setItem("avaloria-language", lang); } catch (_) {}
     loadNews(lang);
     loadDevlog(lang);
+    loadGallery(lang);
   }
 
   let savedLanguage = "pt";
