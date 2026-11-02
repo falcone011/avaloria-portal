@@ -36,7 +36,7 @@
   function makePostCard(post, lang, label) {
     const card = document.createElement("article");
     card.className = "post-card";
-    if (post.image && (/^\//.test(post.image) || /^https:\/\//i.test(post.image))) {
+        if (post.image && (post.image.startsWith("/") || post.image.startsWith("https://"))) {
       const image = document.createElement("img");
       image.src = post.image;
       image.alt = post.title;
@@ -159,7 +159,7 @@
       posts.forEach(post => {
         const card = document.createElement("article");
         card.className = "gallery-card";
-        if (post.image && (/^\\//.test(post.image) || /^https:\\/\\//i.test(post.image))) {
+        if (post.image && (post.image.startsWith("/") || post.image.startsWith("https://"))) {
           const image = document.createElement("img");
           image.src = post.image;
           image.alt = post.title || "";
@@ -176,7 +176,7 @@
           description.textContent = post.description;
           details.appendChild(description);
         }
-        if (post.video_url && /^https:\\/\\//i.test(post.video_url)) {
+        if (post.video_url && post.video_url.startsWith("https://")) {
           const videoLink = document.createElement("a");
           videoLink.href = post.video_url;
           videoLink.target = "_blank";
