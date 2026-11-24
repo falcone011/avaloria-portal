@@ -10,7 +10,7 @@ pt: {
 "news.eyebrow":"MENSAGENS DO REINO","news.heading":"Notícias e atualizações","news.placeholderTitle":"Novidades em breve","news.placeholderText":"As próximas notícias do projeto serão publicadas aqui.",
 "devlog.eyebrow":"DOS BASTIDORES DA OFICINA","devlog.heading":"Diário de desenvolvimento","devlog.intro":"Um registro da evolução do projeto, das ideias aos sistemas em construção.","devlog.placeholder":"O primeiro capítulo do diário será publicado em breve.",
 "gallery.eyebrow":"VISÕES DE AVALÓRIA","gallery.heading":"Galeria","gallery.intro":"Imagens e vídeos oficiais serão reunidos neste espaço conforme o desenvolvimento avançar.","gallery.placeholder":"Em breve: capturas de tela, artes e vídeos do jogo.",
-"support.eyebrow":"AJUDE A FORJAR ESTE MUNDO","support.title":"Apoie a construção de Avalória","support.text":"Escolha como deseja contribuir: com um apoio mensal ou uma contribuição única. Toda ajuda fortalece o desenvolvimento do jogo.","support.monthly":"Apoiar mensalmente","support.once":"Fazer contribuição única",
+"support.eyebrow":"AJUDE A FORJAR ESTE MUNDO","support.title":"Apoie a construção de Avalória","support.text":"Escolha como deseja contribuir: com um apoio mensal, uma contribuição única ou pelo Catarse. Toda ajuda fortalece o desenvolvimento do jogo.","support.monthly":"Apoiar mensalmente","support.once":"Fazer contribuição única","support.catarse":"Apoiar pelo Catarse",
 "footer.tagline":"Forjando um futuro juntos.","footer.status":"Projeto em desenvolvimento","footer.release":"Sem data de lançamento definida","footer.admin":"Painel de desenvolvimento"
 },
 en: {
@@ -24,7 +24,7 @@ en: {
 "news.eyebrow":"MESSAGES FROM THE KINGDOM","news.heading":"News and updates","news.placeholderTitle":"News coming soon","news.placeholderText":"The project's next news updates will be published here.",
 "devlog.eyebrow":"BEHIND THE WORKSHOP DOORS","devlog.heading":"Development diary","devlog.intro":"A record of the project's evolution, from early ideas to systems under construction.","devlog.placeholder":"The first chapter of the devlog will be published soon.",
 "gallery.eyebrow":"VIEWS OF AVALÓRIA","gallery.heading":"Gallery","gallery.intro":"Official images and videos will be collected here as development progresses.","gallery.placeholder":"Coming soon: screenshots, artwork, and game videos.",
-"support.eyebrow":"HELP FORGE THIS WORLD","support.title":"Support the making of Avalória","support.text":"Choose how you would like to contribute: with monthly support or a one-time contribution. Every contribution helps move the game forward.","support.monthly":"Support monthly","support.once":"Make a one-time contribution",
+"support.eyebrow":"HELP FORGE THIS WORLD","support.title":"Support the making of Avalória","support.text":"Choose how you would like to contribute: with monthly support, a one-time contribution, or through Catarse. Every contribution helps move the game forward.","support.monthly":"Support monthly","support.once":"Make a one-time contribution","support.catarse":"Support on Catarse",
 "footer.tagline":"Forging a future together.","footer.status":"Project in development","footer.release":"No release date announced","footer.admin":"Development dashboard"
 }
 };
