@@ -395,3 +395,17 @@ a{text-underline-offset:3px}
  color:#f5d99e;
 }
 .main-nav a.active-section:before,.main-nav a.active-section:after{display:block}
+
+
+/* Ícone oficial do YouTube no agrupamento social do cabeçalho */
+.header-actions{display:flex;align-items:center;gap:12px}
+.social-icon{
+ display:inline-flex;align-items:center;justify-content:center;
+ width:28px;height:28px;color:#d7b477;
+ transition:color .18s ease,transform .18s ease,filter .18s ease
+}
+.social-icon svg{display:block;width:20px;height:20px;fill:currentColor}
+.social-icon:hover,.social-icon:focus-visible{
+ color:#fff0c8;transform:translateY(-1px);filter:drop-shadow(0 0 5px #d9ad5d88)
+}
+@media(max-width:950px){.header-actions{gap:10px}.social-icon{width:30px;height:30px}}
