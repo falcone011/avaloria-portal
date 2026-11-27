@@ -374,3 +374,24 @@ a{text-underline-offset:3px}
  .main-nav a{width:100%;clip-path:none}
  .main-nav a:after{display:none}
 }
+
+
+/* Apenas a seção atual recebe a moldura dourada */
+.main-nav a{
+ border:1px solid transparent!important;
+ background:transparent!important;
+ box-shadow:none!important;
+ color:#e8d3ad;
+}
+.main-nav a:before,.main-nav a:after{display:none}
+.main-nav a:hover,.main-nav a:focus-visible{
+ border-color:transparent!important;background:transparent!important;box-shadow:none!important;
+ color:#f3d99f;text-shadow:0 0 8px #d3a45b66;
+}
+.main-nav a.active-section{
+ border:1px solid #b18a4d!important;
+ background:linear-gradient(180deg,#634522d9,#342114ed)!important;
+ box-shadow:inset 0 0 0 2px #21140c,inset 0 0 0 3px #9c743e,0 2px 10px #0007!important;
+ color:#f5d99e;
+}
+.main-nav a.active-section:before,.main-nav a.active-section:after{display:block}
