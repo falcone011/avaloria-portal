@@ -77,3 +77,95 @@ button,select{font:inherit}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+
+/* Direção visual: portal medieval ilustrado, conforme referência aprovada */
+:root{--wood:#1a100b;--wood2:#2b1a10;--gold:#bd9148;--gold-light:#e7c987;--paper:#e5d2aa;--paper-light:#f0e2c3}
+body{background:#1a100b;color:#e9d7b4}
+.site-header{
+  position:absolute;top:4px;left:0;right:0;min-height:48px;height:48px;
+  padding:4px clamp(14px,2vw,28px);gap:16px;
+  background:linear-gradient(180deg,#160d09ed,#25160fe0);
+  border-bottom:1px solid #9a713d;box-shadow:0 4px 16px #0008
+}
+.wordmark{font-size:clamp(25px,3.4vw,42px);line-height:1;white-space:nowrap}
+.wordmark-rule{margin-top:0}
+.main-nav{gap:clamp(10px,1.6vw,24px);height:100%}
+.main-nav a{font-size:clamp(10px,.95vw,13px);padding:7px 9px;border:1px solid transparent}
+.main-nav a:first-child{border-color:#87612f;background:linear-gradient(#60401f88,#24160b88);box-shadow:inset 0 0 12px #d5a65022}
+.main-nav a:hover{border-color:#a77a3b;background:#6b482522}
+.header-actions{padding:4px 8px;border:1px solid #98703a;background:#21140dc9;box-shadow:inset 0 0 0 2px #4a301c}
+.language-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.header-actions select{border:0;background:transparent;padding:3px 6px;font-family:Cinzel,serif;font-size:11px}
+.hero{min-height:360px;height:min(68vh,470px);max-height:470px;align-items:center;background:#1b110c}
+.hero-art{inset:0;background:
+ linear-gradient(90deg,#170e09 0%,#1b100bd9 25%,#1b100b52 47%,transparent 72%),
+ linear-gradient(0deg,#1b100b99 0%,transparent 32%),
+ url("../images/hero-conceito.png") center 44%/cover no-repeat;
+ opacity:1;filter:sepia(.28) saturate(.88)}
+.hero-shade{inset:0;background:linear-gradient(90deg,#170e0be8 0%,#170e0ba8 27%,transparent 64%)}
+.hero-copy{width:min(390px,38%);margin-left:clamp(22px,5vw,76px);padding:72px 0 34px}
+.hero-copy .eyebrow{font-size:10px;letter-spacing:.13em;color:#c7a36a;margin:0 0 8px}
+.hero h1{font-size:clamp(34px,4.6vw,58px);line-height:.98;margin:8px 0 5px}
+.hero h1 em{font-size:1.04em;color:#d2a24c}
+.ornament{max-width:300px;font-size:17px}
+.hero-description{font-size:13px;line-height:1.35;max-width:300px;color:#cbb894;margin:8px 0 12px}
+.hero-copy .button{padding:8px 19px;font-size:11px}
+.status-note{font-size:10px;margin-top:9px;color:#bba47d}
+.intro-grid{
+ width:min(1180px,calc(100% - 36px));margin:-34px auto 0;
+ grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;z-index:4
+}
+.parchment-card{
+ min-height:112px;padding:14px 17px 12px 54px;
+ background:linear-gradient(135deg,#f0dfbd,#d7c096 58%,#c7aa78);
+ border:1px solid #8f6838;box-shadow:0 7px 18px #0009;
+}
+.parchment-card:after{inset:4px;border-color:#9c7746}
+.card-icon{position:absolute;left:16px;top:18px;font-size:25px;color:#5b3c20}
+.parchment-card h2{font-size:14px;line-height:1.2;margin:2px 0 5px}
+.parchment-card p{font-size:11px;line-height:1.35;margin:0 0 5px}
+.text-link{font-size:11px}
+.support-banner{
+ width:100%;margin:10px 0 0;padding:10px clamp(20px,8vw,110px);
+ min-height:62px;gap:18px;justify-content:center;
+ border-left:0;border-right:0;border-color:#80602f;
+ background:linear-gradient(90deg,#1c110b,#3b2616 50%,#1c110b);
+ box-shadow:inset 0 1px #d4a65a22,0 5px 14px #0005
+}
+.support-mark{font-size:31px;color:#b68a45}
+.support-copy{flex:0 1 520px}
+.support-copy h2{font-size:18px;margin:0;color:#d8b36e}
+.support-copy p:last-child{font-size:11px;line-height:1.25;margin:0;color:#a9916c}
+.support-actions{flex:0 0 auto}
+.support-actions .button{min-width:145px;padding:8px 18px;font-size:11px}
+.content-section{padding-top:66px;padding-bottom:66px}
+.section-heading h2{font-size:clamp(25px,3vw,36px)}
+@media(max-width:950px){
+ .site-header{position:relative;top:auto;height:auto;min-height:58px;flex-wrap:wrap}
+ .main-nav{gap:8px}
+ .hero{height:390px;min-height:390px}
+ .hero-copy{width:54%;margin-left:5vw}
+ .intro-grid{grid-template-columns:1fr;margin-top:-18px}
+ .parchment-card{min-height:0}
+ .support-banner{width:100%;flex-wrap:nowrap}
+}
+@media(max-width:560px){
+ .site-header{padding:10px 14px}
+ .wordmark{font-size:29px}
+ .hero{height:440px;min-height:440px}
+ .hero-art{background-position:58% center;opacity:.72}
+ .hero-shade{background:linear-gradient(90deg,#170e0be8,#170e0b99 65%,#170e0b44)}
+ .hero-copy{width:auto;max-width:330px;margin:0;padding:52px 20px 28px}
+ .hero h1{font-size:39px}
+ .hero-description{font-size:13px}
+ .intro-grid{width:calc(100% - 24px);gap:7px;margin-top:-14px}
+ .parchment-card{padding:13px 14px 12px 48px}
+ .card-icon{left:13px;top:15px}
+ .support-banner{padding:12px 16px;gap:10px;flex-wrap:wrap}
+ .support-mark{font-size:25px}
+ .support-copy{flex:1 1 190px}
+ .support-copy h2{font-size:15px}
+ .support-actions{width:100%}
+ .support-actions .button{width:100%}
+}
