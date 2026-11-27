@@ -333,3 +333,44 @@ a{text-underline-offset:3px}
  .main-nav{gap:8px}
  .main-nav a{width:100%;justify-content:flex-start;min-height:38px;padding:7px 14px}
 }
+
+
+/* Cabeçalho fixo e navegação com moldura ornamental da referência */
+.site-header{
+ position:sticky!important;
+ top:0;
+ left:auto;right:auto;
+ z-index:1000;
+ width:100%;
+}
+.main-nav{gap:clamp(6px,.85vw,13px)}
+.main-nav a{
+ min-height:32px;
+ padding:5px 12px;
+ border:1px solid #806039;
+ background:linear-gradient(180deg,#332115d9 0%,#1b100bd9 100%);
+ box-shadow:inset 0 0 0 1px #21140c, inset 0 0 0 2px #604526;
+ clip-path:polygon(7px 0,calc(100% - 7px) 0,100% 50%,calc(100% - 7px) 100%,7px 100%,0 50%);
+ position:relative;
+}
+.main-nav a:before{
+ content:"";position:absolute;left:5px;right:5px;bottom:2px;height:1px;
+ background:linear-gradient(90deg,transparent,#bd9658 18%,#bd9658 82%,transparent);
+ opacity:.7
+}
+.main-nav a:after{
+ content:"";position:absolute;left:50%;bottom:-3px;width:5px;height:5px;
+ transform:translateX(-50%) rotate(45deg);
+ border:1px solid #c39a59;background:#2b1a10;
+}
+.main-nav a:hover,.main-nav a:focus-visible,
+.main-nav a:first-child,.main-nav a[aria-current="page"]{
+ border-color:#d0aa68;
+ background:linear-gradient(180deg,#644725e8,#2c1b10ed);
+ box-shadow:inset 0 0 0 1px #21140c,inset 0 0 0 2px #98713c,0 0 9px #bd914833;
+}
+@media(max-width:950px){
+ .site-header{position:sticky!important;top:0}
+ .main-nav a{width:100%;clip-path:none}
+ .main-nav a:after{display:none}
+}
