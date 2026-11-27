@@ -235,11 +235,12 @@
     menuButton.setAttribute("aria-expanded", "false");
   }));
 
-  // Mantém a moldura no item correspondente à seção visível.
+  // Seleciona a seção pelo ponto de leitura abaixo do cabeçalho fixo.
   const sectionLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
   const observedSections = sectionLinks
     .map(link => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
+
   const setActiveSection = (id) => {
     sectionLinks.forEach(link => {
       const active = link.getAttribute("href") === "#" + id;
@@ -248,17 +249,35 @@
       else link.removeAttribute("aria-current");
     });
   };
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter(entry => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActiveSection(visible.target.id);
-    }, { rootMargin: "-22% 0px -62% 0px", threshold: [0, 0.1, 0.25, 0.5] });
-    observedSections.forEach(section => sectionObserver.observe(section));
-  }
+
+  let sectionTicking = false;
+  const updateActiveSection = () => {
+    sectionTicking = false;
+    const header = document.querySelector(".site-header");
+    const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+    const readingLine = Math.max(headerBottom + 24, 110);
+    let current = observedSections[0];
+    for (const section of observedSections) {
+      if (section.getBoundingClientRect().top <= readingLine) current = section;
+      else break;
+    }
+    if (current) setActiveSection(current.id);
+  };
+  const requestSectionUpdate = () => {
+    if (sectionTicking) return;
+    sectionTicking = true;
+    window.requestAnimationFrame(updateActiveSection);
+  };
+
   sectionLinks.forEach(link => link.addEventListener("click", () => {
     const id = link.getAttribute("href").slice(1);
     setActiveSection(id);
+    // Recalcula após o início da rolagem suave para manter o item correto.
+    window.setTimeout(requestSectionUpdate, 350);
   }));
-  setActiveSection("inicio");
+  window.addEventListener("scroll", requestSectionUpdate, { passive: true });
+  window.addEventListener("resize", requestSectionUpdate);
+  window.addEventListener("load", requestSectionUpdate);
+  observedSections.forEach(section => { section.style.scrollMarginTop = "90px"; });
+  updateActiveSection();
 })();
