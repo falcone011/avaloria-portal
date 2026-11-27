@@ -234,4 +234,31 @@
     nav.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
   }));
+
+  // Mantém a moldura no item correspondente à seção visível.
+  const sectionLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  const observedSections = sectionLinks
+    .map(link => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  const setActiveSection = (id) => {
+    sectionLinks.forEach(link => {
+      const active = link.getAttribute("href") === "#" + id;
+      link.classList.toggle("active-section", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActiveSection(visible.target.id);
+    }, { rootMargin: "-22% 0px -62% 0px", threshold: [0, 0.1, 0.25, 0.5] });
+    observedSections.forEach(section => sectionObserver.observe(section));
+  }
+  sectionLinks.forEach(link => link.addEventListener("click", () => {
+    const id = link.getAttribute("href").slice(1);
+    setActiveSection(id);
+  }));
+  setActiveSection("inicio");
 })();
