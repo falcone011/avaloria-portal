@@ -4,7 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#21160f">
-  <meta name="description" content="Conheça Avalória, um simulador medieval de ferraria, gestão econômica e narrativa tática.">
+  <meta name="description" content="Conheça Avalória: um jogo medieval de ferraria, gestão e estratégia, onde suas escolhas moldam o destino de um reino.">
+  <meta name="author" content="Equipe Avalória">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://avaloria-portal.pages.dev/">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Avalória">
+  <meta property="og:title" content="Avalória — Um novo reino está sendo forjado">
+  <meta property="og:description" content="Um jogo medieval de ferraria, gestão e estratégia, onde suas escolhas moldam o destino de um reino.">
+  <meta property="og:url" content="https://avaloria-portal.pages.dev/">
+  <meta property="og:image" content="https://avaloria-portal.pages.dev/assets/images/hero-conceito.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Avalória — Um novo reino está sendo forjado">
+  <meta name="twitter:description" content="Um jogo medieval de ferraria, gestão e estratégia, onde suas escolhas moldam o destino de um reino.">
+  <meta name="twitter:image" content="https://avaloria-portal.pages.dev/assets/images/hero-conceito.png">
   <title>Avalória — Um novo reino está sendo forjado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +30,8 @@
   <div class="top-rule"></div>
   <header class="site-header">
     <a class="wordmark" href="#inicio" aria-label="Avalória - início">Avalória<span class="wordmark-rule"></span></a>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <nav class="main-nav" aria-label="Navegação principal">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu-principal" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
       <a href="#inicio" data-i18n="nav.home">Início</a>
       <a href="#jogo" data-i18n="nav.game">O Jogo</a>
       <a href="#noticias" data-i18n="nav.news">Notícias</a>
@@ -25,7 +40,7 @@
       <a href="#apoie" data-i18n="nav.support">Apoie</a>
     </nav>
     <div class="header-actions">
-      <label class="language-label" for="language">Idioma</label>
+      <label class="language-label" for="language" data-i18n="common.language">Idioma</label>
       <select id="language" aria-label="Selecionar idioma">
         <option value="pt">PT</option>
         <option value="en">EN</option>
@@ -186,7 +201,7 @@
           <div class="reward-art reward-art-thanks" aria-hidden="true"><span>✧</span></div>
           <div class="reward-content">
             <p class="reward-level" data-i18n="rewards.level1">APOIADOR</p>
-            <h3 data-i18n="rewards.thanksTitle">Apoiador de Avalória</h3>
+            <h3 data-i18n="rewards.thanksTitle">Agradecimento Especial de Avalória</h3>
             <p class="reward-price">R$ 10</p>
             <p data-i18n="rewards.thanksText">Receba nosso agradecimento especial por apoiar o desenvolvimento de Avalória.</p>
             <p class="reward-delivery" data-i18n="rewards.thanksDelivery">Benefícios conforme as condições da campanha</p>
@@ -196,7 +211,7 @@
           <div class="reward-art reward-art-wallpaper" aria-hidden="true"><span>✥</span></div>
           <div class="reward-content">
             <p class="reward-level" data-i18n="rewards.level2">ALIADO</p>
-            <h3 data-i18n="rewards.wallpaperTitle">Aliado de Avalória</h3>
+            <h3 data-i18n="rewards.wallpaperTitle">Wallpaper Exclusivo de Avalória</h3>
             <p class="reward-price">R$ 20</p>
             <p data-i18n="rewards.wallpaperText">Inclui as recompensas anteriores, wallpaper digital exclusivo e atualizações especiais.</p>
             <p class="reward-delivery" data-i18n="rewards.wallpaperDelivery">Benefícios conforme as condições da campanha</p>
@@ -206,7 +221,7 @@
           <div class="reward-art reward-art-credits" aria-hidden="true"><span>⚒</span></div>
           <div class="reward-content">
             <p class="reward-level" data-i18n="rewards.level3">GUARDIÃO</p>
-            <h3 data-i18n="rewards.creditsTitle">Guardião de Avalória</h3>
+            <h3 data-i18n="rewards.creditsTitle">Nome nos Créditos de Avalória</h3>
             <p class="reward-price">R$ 35</p>
             <p data-i18n="rewards.creditsText">Inclui as recompensas anteriores, arte digital exclusiva e nome nos créditos do jogo, com autorização.</p>
             <p class="reward-delivery" data-i18n="rewards.creditsDelivery">Benefícios conforme as condições da campanha</p>
