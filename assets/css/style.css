@@ -54,3 +54,26 @@
 .apoia-onetime .reward-level{margin:0;color:#d9b66f}
 .support-rewards{padding-top:60px}
 @media(max-width:950px){.apoia-tier-grid{grid-template-columns:1fr}.apoia-onetime{align-items:stretch;flex-direction:column}.apoia-onetime .button{width:100%}}
+
+
+/* Acabamento final: foco visível, movimento reduzido e consistência */
+:where(a, button, select, input, textarea, [tabindex]):focus-visible{
+  outline:3px solid var(--gold-light);
+  outline-offset:4px;
+  border-radius:2px;
+}
+:where(a,button,select):focus:not(:focus-visible){outline:none}
+button,select{font:inherit}
+.reward-card{min-height:100%}
+.reward-content h3{min-height:2.6em}
+.reward-content>p:not(.reward-level):not(.reward-price){line-height:1.55}
+.support-option .button{min-height:48px;text-align:center}
+.gallery-card img,.post-card img{background:#2a1b12}
+@media(hover:hover){
+  .parchment-card,.feature,.post-card,.reward-card,.gallery-card{transition:transform .22s ease,box-shadow .22s ease}
+  .parchment-card:hover,.feature:hover,.post-card:hover,.reward-card:hover,.gallery-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px #0005}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
