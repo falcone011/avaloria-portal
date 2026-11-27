@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avaloria-portal.pages.dev/sitemap.xml
