@@ -301,3 +301,35 @@ a{text-underline-offset:3px}
  .site-footer{display:flex;gap:12px}
  .footer-wordmark{font-size:28px}
 }
+
+
+/* Navegação emoldurada: botões individuais no estilo da referência */
+.main-nav{gap:clamp(7px,1vw,14px)}
+.main-nav a{
+ position:relative;display:inline-flex;align-items:center;justify-content:center;
+ min-height:34px;padding:6px 13px;border:1px solid #8d6938;
+ background:linear-gradient(180deg,#392719b8,#1c110bd9);color:#e8d3ad;
+ box-shadow:inset 0 0 0 2px #21140c,inset 0 0 0 3px #74532e,0 2px 7px #0006;
+ text-shadow:0 1px 4px #000;
+ transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease
+}
+.main-nav a:before,.main-nav a:after{
+ content:"";position:absolute;width:5px;height:5px;
+ border-color:#d2aa66;border-style:solid;opacity:.9;pointer-events:none
+}
+.main-nav a:before{top:3px;left:3px;border-width:1px 0 0 1px}
+.main-nav a:after{right:3px;bottom:3px;border-width:0 1px 1px 0}
+.main-nav a:hover,.main-nav a:focus-visible{
+ color:#ffe6ad;border-color:#d2aa66;
+ background:linear-gradient(180deg,#684723d9,#352114ed);
+ box-shadow:inset 0 0 0 2px #21140c,inset 0 0 0 3px #a27a43,0 0 10px #c596493d
+}
+.main-nav a:first-child,.main-nav a[aria-current="page"]{
+ color:#f5d99e;border-color:#b18a4d;
+ background:linear-gradient(180deg,#634522d9,#342114ed);
+ box-shadow:inset 0 0 0 2px #21140c,inset 0 0 0 3px #9c743e,0 2px 10px #0007
+}
+@media(max-width:950px){
+ .main-nav{gap:8px}
+ .main-nav a{width:100%;justify-content:flex-start;min-height:38px;padding:7px 14px}
+}
